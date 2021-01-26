@@ -12,8 +12,9 @@ int counter = 0;
 
         File[] files = root.listFiles(startsWith);
         assert files != null;
-        for (File ignored : files) {
-            counter++;
+        for (File f : files) {
+           if (f.isFile())
+               counter++;
         }
         System.out.println("მოძებნილი ფაილების რაოდენობაა : " +counter);
     }
